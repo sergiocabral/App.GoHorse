@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="favicon.png" />
+    <meta charset="UTF-8">
+    <meta name="description" content="eXtreme Go Horse (XGH">
+    <meta name="keywords" content="eXtreme Go Horse, XGH, Go Horse, Programming, Developer">
+    <meta name="author" content="sergiocabral.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:locale" content="pt-BR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Go Horse" />
+    <meta property="og:description" content="eXtreme Go Horse (XGH)" />
+    <meta property="og:url" content="https://gohorse.dev/" />
+    <meta property="og:site_name" content="gohorse.dev" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image" content="https://gohorse.dev/go-horse.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Go Horse" />
+    <meta name="twitter:description" content="eXtreme Go Horse (XGH)" />
+    <title>Go Horse</title>
+    <style>
+        html {
+            height: 100%;
+            background-color: black;
+        }
+        div, video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+        }
+        video {
+            animation: showing 0.5s;
+        }
+        div {
+            background-image: url(go-horse.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation: showing 5s;
+            z-index: -1;
+        }
+        @keyframes showing {
+            0% {
+                opacity: 0;
+            }
+            75% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+    </head>
+    <body>
+        <div></div>
+        <video autoplay muted loop>
+            <source src="go-horse.mp4" type="video/mp4">
+        </video>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JS8QGRYLL6"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-JS8QGRYLL6');
+        </script>
+    </body>
+</html>
