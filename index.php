@@ -1,27 +1,48 @@
-<!DOCTYPE html>
+<?php 
+$domain = strtolower($_SERVER['SERVER_NAME']);
+switch ($domain) {
+    case "gohorse.dev":
+        $filename = "gohorse";
+        $title = "Go Horse";
+        $description = "eXtreme Go Horse (XGH)";
+        $keywords = "eXtreme Go Horse, XGH, Go Horse";
+        $gtag = "G-JS8QGRYLL6";
+        break;
+    case "devnator.com":
+        $filename = "devnator";
+        $title = "The Devnator";
+        $description = "The Bug Exterminator";
+        $keywords = "The Bug Exterminator, Devnator, Terminator, The Devnator, The Terminator, Exterminador, Exterminador do Futuro";
+        $gtag = "G-1LWLNPRCB6";
+        break;
+    default:
+        die;
+}
+$commonKeywords = "Developer, Software, Programming, Programação, Desenvolvimento";
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" href="favicon.png" />
     <meta charset="UTF-8">
-    <meta name="description" content="eXtreme Go Horse (XGH">
-    <meta name="keywords" content="eXtreme Go Horse, XGH, Go Horse, Programming, Developer">
+    <meta name="description" content="<?=$description?>">
+    <meta name="keywords" content="<?=$keywords?>, <?=$commonKeywords?>">
     <meta name="author" content="sergiocabral.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:locale" content="pt-BR" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Go Horse" />
-    <meta property="og:description" content="eXtreme Go Horse (XGH)" />
-    <meta property="og:url" content="https://gohorse.dev/" />
-    <meta property="og:site_name" content="gohorse.dev" />
+    <meta property="og:title" content="<?=$title?>" />
+    <meta property="og:description" content="<?=$description?>" />
+    <meta property="og:url" content="https://<?=$domain?>/" />
+    <meta property="og:site_name" content="<?=$domain?>" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image" content="https://gohorse.dev/go-horse.jpg" />
+    <meta property="og:image" content="https://<?=$domain?>/<?=$filename?>.jpg" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Go Horse" />
-    <meta name="twitter:description" content="eXtreme Go Horse (XGH)" />
-    <title>Go Horse</title>
+    <meta name="twitter:title" content="<?=$title?>" />
+    <meta name="twitter:description" content="<?=$description?>" />
+    <title><?=$title?></title>
     <style>
         html {
             height: 100%;
@@ -38,7 +59,7 @@
             animation: showing 0.5s;
         }
         div {
-            background-image: url(go-horse.jpg);
+            background-image: url(<?=$filename?>.jpg);
             background-size: cover;
             background-repeat: no-repeat;
             animation: showing 5s;
@@ -60,15 +81,15 @@
     <body>
         <div></div>
         <video autoplay muted loop>
-            <source src="go-horse.mp4" type="video/mp4">
+            <source src="<?=$filename?>.mp4" type="video/mp4">
         </video>
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JS8QGRYLL6"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<?=$gtag?>"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-JS8QGRYLL6');
+            gtag('config', '<?=$gtag?>');
         </script>
     </body>
 </html>
