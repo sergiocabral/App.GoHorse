@@ -1,22 +1,21 @@
 <?php 
 $domain = strtolower($_SERVER['SERVER_NAME']);
-switch ($domain) {
-    case "gohorse.dev":
-        $filename = "gohorse";
-        $title = "Go Horse";
-        $description = "eXtreme Go Horse (XGH)";
-        $keywords = "eXtreme Go Horse, XGH, Go Horse";
-        $gtag = "G-JS8QGRYLL6";
-        break;
-    case "devnator.com":
-        $filename = "devnator";
-        $title = "The Devnator";
-        $description = "The Bug Exterminator";
-        $keywords = "The Bug Exterminator, Devnator, Terminator, The Devnator, The Terminator, Exterminador, Exterminador do Futuro";
-        $gtag = "G-1LWLNPRCB6";
-        break;
-    default:
-        die;
+if (strpos($domain, "gohorse.dev") !== FALSE) {
+    $domain = "gohorse.dev";
+    $filename = "gohorse";
+    $title = "Go Horse";
+    $description = "eXtreme Go Horse (XGH)";
+    $keywords = "eXtreme Go Horse, XGH, Go Horse";
+    $gtag = "G-JS8QGRYLL6";
+} else if (strpos($domain, "devnator.com") !== FALSE) {
+    $domain = "devnator.com";
+    $filename = "devnator";
+    $title = "The Devnator";
+    $description = "The Bug Exterminator";
+    $keywords = "The Bug Exterminator, Devnator, Terminator, The Devnator, The Terminator, Exterminador, Exterminador do Futuro";
+    $gtag = "G-1LWLNPRCB6";
+} else {
+    die;
 }
 $commonKeywords = "Developer, Software, Programming, Programação, Desenvolvimento";
 ?><!DOCTYPE html>
