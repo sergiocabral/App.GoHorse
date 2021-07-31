@@ -47,7 +47,7 @@ $commonKeywords = "Developer, Software, Programming, Programação, Desenvolvime
             height: 100%;
             background-color: black;
         }
-        div, video {
+        .background, video {
             position: fixed;
             right: 0;
             bottom: 0;
@@ -57,12 +57,27 @@ $commonKeywords = "Developer, Software, Programming, Programação, Desenvolvime
         video {
             animation: showing 0.5s;
         }
-        div {
+        .background {
             background-image: url(<?=$filename?>.jpg);
             background-size: cover;
             background-repeat: no-repeat;
             animation: showing 5s;
             z-index: -1;
+        }
+        .icon {
+            background-image: url(<?=$filename?>.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin: 0 auto;
+            width: 8em;
+            height: 8em;
+            border-radius: 100%;
+            box-shadow: 0px 0px 10px 0px black;
+            animation: spinner 7200s linear infinite;
+            z-index: 1;
+            position: absolute;
+            left: 1em;
+            bottom: 1em;
         }
         @keyframes showing {
             0% {
@@ -75,13 +90,25 @@ $commonKeywords = "Developer, Software, Programming, Programação, Desenvolvime
                 opacity: 1;
             }
         }
+        @keyframes spinner {
+            0% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(360deg);
+            }
+            100% {
+                transform: rotate(720deg);
+            }
+        }
     </style>
     </head>
     <body>
-        <div></div>
+        <div class="background"></div>
         <video autoplay muted loop>
             <source src="<?=$filename?>.mp4" type="video/mp4">
         </video>
+        <div class="icon"></div>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=<?=$gtag?>"></script>
         <script>
